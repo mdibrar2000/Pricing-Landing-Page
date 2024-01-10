@@ -1,0 +1,253 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /*Header*/
+  .header {
+    background: linear-gradient(135deg, #3494e6, #ec6ead);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo{
+    max-width: 150px;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #f8c03d;
+  }
+  
+
+/*Container*/
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px;
+  }
+  
+  .product {
+    text-align: center;
+  }
+
+  .product img {
+    width: 95%;
+    height: auto;
+    margin-top: 10px;
+  }
+
+  .product-details {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  .price-section {
+    display: inline-block;
+    text-align: center;
+    margin-top: 25px;
+  }
+  
+  .price {
+    width: fit-content;
+    padding: 5px;
+    border-radius: 8px;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  .price:hover{
+    background-color: #629fe477;
+  }
+
+  /* Styles for buttons */
+ .buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .buttons button {
+    padding: 15px 30px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0 10px;
+    font-size: 24px;
+    border: 1px solid transparent;
+    background-color: #3494e6;
+  }
+  
+  .buttons button:hover {
+    background-color: #ffd166;
+    border-color: #c0c0c0;
+  }
+
+  
+  .description {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .description h3 {
+    text-align: center;
+    margin-block-end: 1em;
+}
+  .description p {
+    line-height: 1.6;
+  }
+  
+
+  /*Footer*/
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 5px;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid #555;
+    color: #ccc;
+    font-size: 0.8em;
+  }
+
+
+  
+  /* Responsive layout for mobile devices */
+  @media (max-width: 768px) {
+    .product {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-top: 1px;
+    }
+    h1 {
+      display: block;
+      font-size: 1.5em;
+      font-weight: bold;
+  }
+
+    .price-section {
+      order: 3;
+      text-align: center;
+      margin-top: 45px;
+    }
+  
+    input[type="checkbox" i] {
+      background-color: initial;
+      cursor: default;
+      appearance: auto;
+      box-sizing: border-box;
+      margin: 30px 3px 3px 4px;
+      padding: initial;
+      border: initial;
+    }
+
+    .buttons button {
+      padding: 10px 18px;
+      font-size: 18px;
+      border: 1px solid transparent;
+      background-color: #3494e6;
+    }
+
+  }
+  
+  /* Responsive layout for desktop */
+  @media (min-width: 769px) {
+    .product {
+      display: flex;
+      align-items: center;
+    }
+
+    h1 {
+      display: block;
+      font-size: 2.5em;
+      font-weight: bold;
+  }
+  
+    .product img {
+      width: auto;
+      max-width: 40%;
+    }
+  
+    .price-section {
+      text-align: center;
+      margin-top: 70px;
+    }
+    
+    .price {
+      font-size: 36px;
+      cursor: pointer;
+    }
+
+
+    input[type="checkbox" i] {
+      background-color: initial;
+      cursor: default;
+      appearance: auto;
+      box-sizing: border-box;
+      margin: 40px 3px 3px 4px;
+      padding: initial;
+      border: initial;
+  }
+
+  }
+  
+
+  @media (min-width: 1150px) {
+    
+    h1 {
+      font-size: 3em;
+    }
+
+    .product img {
+      width: auto;
+      max-width: 40%;
+      padding: 10px;
+    }
+  
+    .price-section {
+      text-align: center;
+      margin-top: 80px;
+    }
+    input[type="checkbox" i] {
+      margin: 50px 3px 3px 4px;
+  }
+
+  }
+  
