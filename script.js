@@ -1,45 +1,62 @@
-const priceElement = document.getElementById('dynamicPrice');
+const priceElements = [
+  document.getElementById('dynamicPrice'),
+  document.getElementById('dynamicPrice2'),
+  document.getElementById('dynamicPrice3')
+];
+
+const accessoryCheckbox = document.getElementById('accessoryCheckbox');
 let isUSD = true;
 const usdToInrRate = 83.10;
 
-// Function to update price on checkbox change
-function updatePrice() {
-  const basePrice = parseFloat(priceElement.getAttribute('data-price'));
-  const accessoryPrice = document.getElementById('accessoryCheckbox').checked ? 150 : 0;
-
+// update price after adding accessory
+function updatePrice(element) {
+  const basePrice = parseFloat(element.getAttribute('data-price')) || 0; // Default to 0 if attribute is not set
+  const accessoryPrice = accessoryCheckbox.checked ? 150 : 0;
   const totalPrice = basePrice + accessoryPrice;
-  priceElement.setAttribute('data-total-price', totalPrice);
+  element.setAttribute('data-total-price', totalPrice);
+
   if (isUSD) {
-    priceElement.textContent = `Price: $${totalPrice.toFixed(2)}`;
+    element.textContent = `$${totalPrice.toFixed(2)}`;
   } else {
     const totalPriceINR = totalPrice * usdToInrRate;
-    priceElement.textContent = `Price: ₹${totalPriceINR.toFixed(2)}`;
+    element.textContent = ` ₹${totalPriceINR.toFixed(2)}`;
   }
 }
 
-//convert price to INR on click
+//price conversion into INR
 function convertToINR() {
-  const totalPrice = parseFloat(priceElement.getAttribute('data-total-price'));
-  const totalPriceINR = totalPrice * usdToInrRate;
-  priceElement.textContent = `Price: ₹${totalPriceINR.toFixed(2)}`;
+  priceElements.forEach(element => updatePrice(element));
   isUSD = false;
 }
 
-//to USD on click
+//price conversion into USD
 function convertToUSD() {
-  const totalPrice = parseFloat(priceElement.getAttribute('data-total-price'));
-  priceElement.textContent = `Price: $${totalPrice.toFixed(2)}`;
+  priceElements.forEach(element => updatePrice(element));
   isUSD = true;
 }
-
-priceElement.addEventListener('click', function () {
-  if (isUSD) {
-    convertToINR();
-  } else {
-    convertToUSD();
-  }
+//on click
+priceElements.forEach(element => {
+  element.addEventListener('click', () => {
+    if (isUSD) {
+      convertToINR();
+    } else {
+      convertToUSD();
+    }
+  });
 });
 
-document.getElementById('accessoryCheckbox').addEventListener('change', updatePrice);
+document.getElementById('accessoryCheckbox').addEventListener('change', () => {
+  priceElements.forEach(element => updatePrice(element));
+});
 
-updatePrice();
+priceElements.forEach(element => updatePrice(element)); 
+
+
+//to select
+const toggleElements = document.querySelectorAll('.price-toggle');
+
+toggleElements.forEach(element => {
+  element.addEventListener('click', () => {
+    element.classList.toggle('selected');
+  });
+});
