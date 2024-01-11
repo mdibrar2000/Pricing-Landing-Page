@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Price Landing Page</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Price Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
 <body>
-  
-  
 
   <header class="header">
     <div class="logo">
@@ -22,43 +21,90 @@
     </nav>
     
   </header>
-
-
-
-
   <div class="container">
     <div class="product">
       <img src="photo.jpg" alt="Product Image">
 
       <div class="product-details">
-        <h1>APPLE MacBook AIR (8 GB/256 GB SSD / Mac OS) Silver</h1>
-        <div class="price-section">
-          <div class="price" id="dynamicPrice" data-price="1200">Price: $1200</div>
+        <h1>Select new MacBook here.</h1>
+
+        <div class="color-selector">
+          <label>
+              <input type="radio" name="color" value="black" checked>
+              Black
+          </label>
+      
+          <label>
+              <input type="radio" name="color" value="silver">
+              Silver
+          </label>
+        </div>
+
+        <div class="add-accessory">
           <input type="checkbox" id="accessoryCheckbox">
           <label for="accessoryCheckbox">Add Accessory</label>
-            
+        </div>   
         </div>
-        
-        <div class="buttons">
-            <button>Add to Cart</button>
-            <button>Buy Now</button>
-        </div>
-        
-      </div>
       
     </div>
-    <div class="description">
-      <h3>Description</h3>
-      <p>Simultaneously supports full native resolution on the built-in display at 1 billion colours and:
-          Up to four external displays: Up to three external displays with 6K resolution at 60Hz over Thunderbolt
-           and one external display with up to 4K resolution at 144Hz over HDMI
-          Up to three external displays: Up to two external displays with 6K resolution at 60Hz over Thunderbolt 
-          and one external display with up to 8K resolution at 60Hz or one external display with 4K resolution at 240Hz over HDMI</p>
-  </div>
+ 
+    <div class="price-toggles">
+      <div class="price-toggle" id="toggle1">
+        <div class="price" id="dynamicPrice" data-price="2000">$2000</div>
+        <hr>
+          <h2>8-core CPU
+            10-core GPU
+            8GB Unified Memory
+            512GB SSD Storage</h2>
+            <hr>
+          <p>35.97 cm (14.2″) Liquid Retina XDR display</p>
+          <p>Two Thunderbolt / USB 4 ports, HDMI port, SDXC card slot, headphone jack,</p>
+          <p>MagSafe 3 port</p>
+          <p>Magic Keyboard with Touch ID</p>
+          <div class="select">Select</div>
+      </div>
+
+      <div class="price-toggle" id="toggle2">
+        <div class="price" id="dynamicPrice2" data-price="2400">$2400</div>
+        <hr>
+          <h2>11-core CPU
+            14-core GPU
+            18GB Unified Memory
+            512GB SSD Storage</h2>
+            <hr>
+          <p>35.97 cm (14.2″) Liquid Retina XDR display</p>
+          <p>Three Thunderbolt 4 ports, HDMI port, SDXC card slot, headphone jack, MagSafe 3 port,</p>
+          <p>MagSafe 3 port</p>
+          <p>Magic Keyboard with Touch ID</p>
+          <p>Force Touch trackpad</p>
+          <p>70W USB-C Power Adapter</p>
+        <div class="select">Select</div>
+      </div>
+
+      <div class="price-toggle" id="toggle3">
+        <div class="price" id="dynamicPrice3" data-price="3000">$3000</div>
+        <hr>
+          <h2>12-core CPU
+            18-core GPU
+            18GB Unified Memory
+            1TB SSD Storage</h2>
+            <hr>
+            <p>35.97 cm (14.2″) Liquid Retina XDR display</p>
+            <p>Three Thunderbolt 4 ports, HDMI port, SDXC card slot, headphone jack, MagSafe 3 port,</p>
+            <p>MagSafe 3 port</p>
+            <p>Magic Keyboard with Touch ID</p>
+            <p>Force Touch trackpad</p>
+            <p>96W USB-C Power Adapter</p>
+         <div class="select">Select</div>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button>Add to Cart</button>
+      <button>Buy Now</button>
+    </div>
 
   </div>
-
-
   
   <footer class="footer">
     <div class="footer-bottom">Designed by Ibrar
